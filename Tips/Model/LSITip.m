@@ -16,7 +16,8 @@
 {
     if (self = [super init]) {
         // Only use underscores in init, or when changing value of a readonly property.  Should use self.property for all others.
-        _name = aName;
+        // use .copy for Mutable types.
+        _name = aName.copy;
         _total = aTotal;
         _splitCount = aSplitCount;
         _tipPercentage = aTipPercentage;
