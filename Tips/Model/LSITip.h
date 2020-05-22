@@ -12,7 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSITip : NSObject
 
-@property (nonatomic, readonly) NSString *name;
+// Make copies of everything that has a "mutable" version.
+@property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly) double total;
 @property (nonatomic, readonly) NSInteger splitCount;
 @property (nonatomic, readonly) double tipCount;
