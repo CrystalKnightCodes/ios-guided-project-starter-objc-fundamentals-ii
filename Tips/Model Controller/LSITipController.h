@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+//@class is faster than importing, but less secure. (Forward Declaration)
+@class LSITip;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LSITipController : NSObject
+
+@property(nonatomic, readonly, copy) NSArray<LSITip *> *tips;
 
 @end
 
