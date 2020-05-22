@@ -7,7 +7,7 @@
 //
 
 #import "LSITipController.h"
-#import "LSITip.h"
+#import "../Model/LSITip.h"
 
 @interface LSITipController () {
     NSMutableArray *_internalTips;
@@ -21,7 +21,8 @@
 {
     if (self = [super init]) {
         _internalTips = [[NSMutableArray alloc] init];
-        
+        // FIXME: Test Mode: Remove for productions)
+#pragma message "This should be removed eventually!"
 #ifdef DEBUG
         [self addTestData];
 #endif
@@ -36,11 +37,14 @@
                                      splitCount:4
                                   tipPercentage:20.];
     [_internalTips addObject:aTip];
-    [_internalTips addObject:[[LSITip alloc] initWithName:
+    
+    [_internalTips addObject:[[LSITip alloc] initWithName:@"Pizza"
                                                     total:30.
                                                splitCount:8
                                             tipPercentage:25.]];
 }
+
+#pragma mark - Convenience Accessors // MARK: ...
 
 
 - (NSArray<LSITip *> *)tips
